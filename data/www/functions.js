@@ -1,0 +1,4 @@
+    function setLang(lang) {
+    localStorage.setItem("lang", lang);
+    location.href = "/" + lang + "/";
+    }
