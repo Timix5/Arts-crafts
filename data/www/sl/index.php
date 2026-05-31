@@ -147,6 +147,9 @@ include '../db.php';
             <td style="padding: 10px 20px;"><?= htmlspecialchars($row["ime"]) ?></td>
             <td style="padding: 10px 20px;"><?= htmlspecialchars($row["email"]) ?></td>
             <td style="padding: 10px 20px;"><?= htmlspecialchars($row["sporocilo"]) ?></td>
+            <td>
+            <a href="../edit.php?id=<?= $row['id_stranka'] ?>">Uredi</a>
+        </td>
         </tr>
 
     <?php endforeach; ?>
@@ -158,7 +161,6 @@ include '../db.php';
 </section>
 
 <section>
-        Tukaj dodaj ostale 3 stvari za nalogo 8.
 </section>
 
 

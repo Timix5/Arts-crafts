@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST["name"];
     $message = $_POST["message"];
 
-    // 1. STRANKA
     $stmt = $conn->prepare("
         INSERT INTO STRANKA (email, ime)
         VALUES (:email, :ime)
@@ -39,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $id_stranka = $conn->lastInsertId();
 
-    // 2. NAROČILO
     $stmt = $conn->prepare("
         INSERT INTO NAROCILO (sporocilo, cas, tk_stranka)
         VALUES (:sporocilo, NOW(), :tk)
@@ -52,7 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $id_narocilo = $conn->lastInsertId();
 
-    // 3. FOTOGRAFIJE (UPLOAD)
     if (!empty($_FILES["files"]["name"][0])) {
 
         foreach ($_FILES["files"]["tmp_name"] as $i => $tmpName) {
