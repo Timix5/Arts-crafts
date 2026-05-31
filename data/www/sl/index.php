@@ -114,7 +114,8 @@ include '../db.php';
             s.id_stranka,
             s.ime,
             s.email,
-            n.sporocilo
+            n.sporocilo,
+            n.id_narocilo
         FROM STRANKA s
         JOIN NAROCILO n
             ON s.id_stranka = n.tk_stranka
@@ -134,6 +135,7 @@ include '../db.php';
             <th style="padding: 10px 20px;">ID</th>
             <th style="padding: 10px 20px;">Ime</th>
             <th style="padding: 10px 20px;">Email</th>
+            <th style="padding: 10px 20px;">Naročilo</th>
             <th style="padding: 10px 20px;">Sporočilo</th>
         </tr>
     </thead>
@@ -146,9 +148,10 @@ include '../db.php';
             <td style="padding: 10px 20px;"><?= $row["id_stranka"] ?></td>
             <td style="padding: 10px 20px;"><?= htmlspecialchars($row["ime"]) ?></td>
             <td style="padding: 10px 20px;"><?= htmlspecialchars($row["email"]) ?></td>
+            <td style="padding: 10px 20px;"><?= $row["id_narocilo"] ?></td>
             <td style="padding: 10px 20px;"><?= htmlspecialchars($row["sporocilo"]) ?></td>
             <td>
-            <a href="../edit.php?id=<?= $row['id_stranka'] ?>">Uredi</a>
+            <a href="../edit.php?id_stranka=<?= $row['id_stranka'] ?>&id_narocilo=<?= $row['id_narocilo'] ?>">Uredi</a>
         </td>
         </tr>
 
