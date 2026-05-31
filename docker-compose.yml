@@ -36,6 +36,7 @@ services:
     image: node:18
     container_name: node_sass
     working_dir: /app
+    restart: unless-stopped
     volumes:
       - ./data/www:/app
       - node_modules:/app/node_modules
