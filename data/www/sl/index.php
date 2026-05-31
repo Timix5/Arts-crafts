@@ -157,6 +157,10 @@ include '../db.php';
 
 </section>
 
+<section>
+        Tukaj dodaj ostale 3 stvari za nalogo 8.
+</section>
+
 
 
 
